@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Lab4_Calculator"
         mc:Ignorable="d"
         Title="Calculator Application" Height="430" Width="280">
+    
     <Grid>
 
         <Grid.ColumnDefinitions>
