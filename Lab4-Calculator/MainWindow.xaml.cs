@@ -31,185 +31,36 @@ namespace Lab4_Calculator
             InitializeComponent();
         }
 
-        private void btn_1_Click(object sender, RoutedEventArgs e)
+        private void number_Click(object sender, RoutedEventArgs e)
         {
 
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 1;
-                txt_display.Text = number1.ToString();
-            }
-            else 
-            {
-                number2 = (number2 * 10) + 1;
-                txt_display.Text = number2.ToString();
-            }
+            Button b = (Button)sender;
 
+           // int.TryParse(b.Content.ToString(), out int numPressed);
 
+            txt_display.Text += b.Content.ToString();
 
         }
 
-        private void btn_2_Click(object sender, RoutedEventArgs e)
+        private void operation_Click(object sender, RoutedEventArgs e)
         {
 
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 2;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 2;
-                txt_display.Text = number2.ToString();
-            }
-        }
+            Button b = (Button)sender;
 
-        private void btn_3_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 3;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 3;
-                txt_display.Text = number2.ToString();
-            }
-        }
+            // int.TryParse(b.Content.ToString(), out int numPressed);
 
-        private void btn_4_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 4;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 4;
-                txt_display.Text = number2.ToString();
-            }
-        }
+            number1 = int.Parse(txt_display.Text);
 
-        private void btn_5_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 5;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 5;
-                txt_display.Text = number2.ToString();
-            }
-        }
-
-        private void btn_6_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 6;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 6;
-                txt_display.Text = number2.ToString();
-            }
-        }
-
-        private void btn_7_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 7;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 1;
-                txt_display.Text = number2.ToString();
-            }
-        }
-
-        private void btn_8_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 8;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 8;
-                txt_display.Text = number2.ToString();
-            }
-        }
-
-        private void btn_9_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 9;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 9;
-                txt_display.Text = number2.ToString();
-            }
-        }
-
-        private void btn_0_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
-            {
-                number1 = (number1 * 10) + 0;
-                txt_display.Text = number1.ToString();
-            }
-            else
-            {
-                number2 = (number2 * 10) + 0;
-                txt_display.Text = number2.ToString();
-            }
-
-
-        }
-
-        private void btn_plus_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "+";
+            operation = b.Content.ToString();
             txt_display.Text = "0";
-        }
 
-        private void btn_minus_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "-";
-            txt_display.Text = "0";
-        }
-
-        private void btn_times_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "*";
-            txt_display.Text = "0";
-        }
-
-        private void btn_divide_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "/";
-            txt_display.Text = "0";
-        }
-
-        private void btn_mod_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "%";
-            txt_display.Text = "0";
         }
 
         private void btn_equal_Click(object sender, RoutedEventArgs e)
         {
+            Button b = (Button)sender;
+
+            number2 = int.Parse(txt_display.Text);
 
             switch (operation)
             {
@@ -247,15 +98,15 @@ namespace Lab4_Calculator
         {
             if (operation == "")
             {
-                number1 *= -1; 
-                txt_display.Text = number1.ToString();
+               // number1 *= -1; check for current string status -/+
+                txt_display.Text = "-" + number1.ToString();
             }
             else
             {
                 number2 *= -1;
                 txt_display.Text = number2.ToString();
             }
-        }
+        } 
 
         private void btn_decimal_Click(object sender, RoutedEventArgs e)
         {

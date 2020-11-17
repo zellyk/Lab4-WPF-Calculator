@@ -28,31 +28,31 @@
         </Grid.RowDefinitions>
         
         <!-- Number Buttons -->
-        <Button x:Name="btn_7" Grid.Row="2" Grid.Column="0" Click="btn_7_Click">7</Button>
-        <Button x:Name="btn_8" Grid.Row="2" Grid.Column="1" Click="btn_8_Click">8</Button>
-        <Button x:Name="btn_9" Grid.Row="2" Grid.Column="2" Click="btn_9_Click">9</Button>
-        <Button x:Name="btn_4" Grid.Row="3" Grid.Column="0" Click="btn_4_Click">4</Button>
-        <Button x:Name="btn_5" Grid.Row="3" Grid.Column="1" Click="btn_5_Click">5</Button>
-        <Button x:Name="btn_6" Grid.Row="3" Grid.Column="2" Click="btn_6_Click">6</Button>
-        <Button x:Name="btn_1" Grid.Row="4" Grid.Column="0" Click="btn_1_Click">1</Button>
-        <Button x:Name="btn_2" Grid.Row="4" Grid.Column="1" Click="btn_2_Click">2</Button>
-        <Button x:Name="btn_3" Grid.Row="4" Grid.Column="2" Click="btn_3_Click">3</Button>
-        <Button x:Name="btn_0" Grid.Row="5" Grid.ColumnSpan="2" Click="btn_0_Click">0</Button>
-        
-        
+        <Button x:Name="btn_7" Content="7" Grid.Row="2" Grid.Column="0" Click="number_Click"/>
+        <Button x:Name="btn_8" Content="8" Grid.Row="2" Grid.Column="1" Click="number_Click"/>
+        <Button x:Name="btn_9" Content="9" Grid.Row="2" Grid.Column="2" Click="number_Click"/>
+        <Button x:Name="btn_4" Content="4" Grid.Row="3" Grid.Column="0" Click="number_Click"/>
+        <Button x:Name="btn_5" Content="5" Grid.Row="3" Grid.Column="1" Click="number_Click"/>
+        <Button x:Name="btn_6" Content="6" Grid.Row="3" Grid.Column="2" Click="number_Click"/>
+        <Button x:Name="btn_1" Content="1" Grid.Row="4" Grid.Column="0" Click="number_Click"/>
+        <Button x:Name="btn_2" Content="2" Grid.Row="4" Grid.Column="1" Click="number_Click"/>
+        <Button x:Name="btn_3" Content="3" Grid.Row="4" Grid.Column="2" Click="number_Click"/>
+        <Button x:Name="btn_0" Content="0" Grid.Row="5" Grid.ColumnSpan="2" Click="number_Click"/> 
+
+
         <!-- Math buttons -->
-        <Button x:Name="btn_clear" Grid.Row="1" Grid.Column="0" Click="btn_clear_Click">AC</Button>
-        <Button x:Name="btn_positive" Grid.Row="1" Grid.Column="1" Click="btn_positive_Click">+/-</Button>
-        <Button x:Name="btn_mod" Grid.Row="1" Grid.Column="2" Click="btn_mod_Click">%</Button>
-        <Button x:Name="btn_divide" Grid.Row="1" Grid.Column="3" Click="btn_divide_Click">/</Button>
-        <Button x:Name="btn_times" Grid.Row="2" Grid.Column="3" Click="btn_times_Click">*</Button>
-        <Button x:Name="btn_minus" Grid.Row="3" Grid.Column="3" Click="btn_minus_Click">-</Button>
-        <Button x:Name="btn_plus" Grid.Row="4" Grid.Column="3" Click="btn_plus_Click">+</Button>
-        <Button x:Name="btn_equal" Grid.Row="5" Grid.Column="3" Click="btn_equal_Click">=</Button>
-        <Button x:Name="btn_decimal" Grid.Row="5" Grid.Column="2" Click="btn_decimal_Click">.</Button>
-        
+        <Button x:Name="btn_clear" Content="AC" Grid.Row="1" Grid.Column="0" Click="btn_clear_Click"/>
+        <Button x:Name="btn_positive" Content="+/-" Grid.Row="1" Grid.Column="1" Click="btn_positive_Click"/> 
+        <Button x:Name="btn_mod" Content="%" Grid.Row="1" Grid.Column="2" Click="operation_Click"/> 
+        <Button x:Name="btn_divide" Content="/" Grid.Row="1" Grid.Column="3" Click="operation_Click"/> 
+        <Button x:Name="btn_times" Content="*" Grid.Row="2" Grid.Column="3" Click="operation_Click"/> 
+        <Button x:Name="btn_minus" Content="-" Grid.Row="3" Grid.Column="3" Click="operation_Click"/> 
+        <Button x:Name="btn_plus" Content="+" Grid.Row="4" Grid.Column="3" Click="operation_Click"/> 
+        <Button x:Name="btn_equal" Content="=" Grid.Row="5" Grid.Column="3" Click="operation_Click"/> 
+        <Button x:Name="btn_decimal" Content="." Grid.Row="5" Grid.Column="2" Click="btn_decimal_Click"/> 
+
         <!-- Result box-->
-        <TextBox x:Name="txt_display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="50" BorderThickness="0" Grid.Row="0" Grid.ColumnSpan="4">000</TextBox>
+        <TextBox x:Name="txt_display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="50" BorderThickness="0" Grid.Row="0" Grid.ColumnSpan="4"/>
 
 
     </Grid>
