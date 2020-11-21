@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab4_Calculator"
         mc:Ignorable="d"
         Title="Calculator Application" Height="430" Width="280">
-    
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -26,33 +26,33 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <!-- Number Buttons -->
-        <Button x:Name="btn_7" Content="7" Grid.Row="2" Grid.Column="0" Click="number_Click"/>
-        <Button x:Name="btn_8" Content="8" Grid.Row="2" Grid.Column="1" Click="number_Click"/>
-        <Button x:Name="btn_9" Content="9" Grid.Row="2" Grid.Column="2" Click="number_Click"/>
-        <Button x:Name="btn_4" Content="4" Grid.Row="3" Grid.Column="0" Click="number_Click"/>
-        <Button x:Name="btn_5" Content="5" Grid.Row="3" Grid.Column="1" Click="number_Click"/>
-        <Button x:Name="btn_6" Content="6" Grid.Row="3" Grid.Column="2" Click="number_Click"/>
-        <Button x:Name="btn_1" Content="1" Grid.Row="4" Grid.Column="0" Click="number_Click"/>
-        <Button x:Name="btn_2" Content="2" Grid.Row="4" Grid.Column="1" Click="number_Click"/>
-        <Button x:Name="btn_3" Content="3" Grid.Row="4" Grid.Column="2" Click="number_Click"/>
-        <Button x:Name="btn_0" Content="0" Grid.Row="5" Grid.ColumnSpan="2" Click="number_Click"/> 
+        <Button x:Name="btn_7" Content="7" Grid.Row="2" Grid.Column="0" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_8" Content="8" Grid.Row="2" Grid.Column="1" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_9" Content="9" Grid.Row="2" Grid.Column="2" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_4" Content="4" Grid.Row="3" Grid.Column="0" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_5" Content="5" Grid.Row="3" Grid.Column="1" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_6" Content="6" Grid.Row="3" Grid.Column="2" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_1" Content="1" Grid.Row="4" Grid.Column="0" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_2" Content="2" Grid.Row="4" Grid.Column="1" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_3" Content="3" Grid.Row="4" Grid.Column="2" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
+        <Button x:Name="btn_0" Content="0" Grid.Row="5" Grid.ColumnSpan="2" Click="number_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
 
 
         <!-- Math buttons -->
-        <Button x:Name="btn_clear" Content="AC" Grid.Row="1" Grid.Column="0" Click="btn_clear_Click"/>
-        <Button x:Name="btn_positive" Content="+/-" Grid.Row="1" Grid.Column="1" Click="btn_positive_Click"/> 
-        <Button x:Name="btn_mod" Content="%" Grid.Row="1" Grid.Column="2" Click="operation_Click"/> 
-        <Button x:Name="btn_divide" Content="/" Grid.Row="1" Grid.Column="3" Click="operation_Click"/> 
-        <Button x:Name="btn_times" Content="*" Grid.Row="2" Grid.Column="3" Click="operation_Click"/> 
-        <Button x:Name="btn_minus" Content="-" Grid.Row="3" Grid.Column="3" Click="operation_Click"/> 
-        <Button x:Name="btn_plus" Content="+" Grid.Row="4" Grid.Column="3" Click="operation_Click"/> 
-        <Button x:Name="btn_equal" Content="=" Grid.Row="5" Grid.Column="3" Click="operation_Click"/> 
-        <Button x:Name="btn_decimal" Content="." Grid.Row="5" Grid.Column="2" Click="btn_decimal_Click"/> 
+        <Button x:Name="btn_clear" Content="AC" Grid.Row="1" Grid.Column="0" Click="btn_clear_Click" Background="#FFD21691" FontFamily="Showcard Gothic" FontSize="48" Foreground="#FFB443AF"/>
+        <Button x:Name="btn_positive" Content="+/-" Grid.Row="1" Grid.Column="1" Click="btn_positive_Click" Background="#FFD21691" FontFamily="Showcard Gothic" FontSize="48" Foreground="#FFB443AF"/>
+        <Button x:Name="btn_mod" Content="%" Grid.Row="1" Grid.Column="2" Click="btn_perc_Click" Background="#FFD21691" FontFamily="Showcard Gothic" FontSize="48" Foreground="#FFB443AF"/>
+        <Button x:Name="btn_divide" Content="/" Grid.Row="1" Grid.Column="3" Click="operation_Click" Background="#FFB443AF" FontFamily="Comic Sans MS" FontSize="48" Foreground="#FFD21691"/>
+        <Button x:Name="btn_times" Content="*" Grid.Row="2" Grid.Column="3" Click="operation_Click" Background="#FFB443AF" FontFamily="Comic Sans MS" FontSize="48" Foreground="#FFD21691"/>
+        <Button x:Name="btn_minus" Content="-" Grid.Row="3" Grid.Column="3" Click="operation_Click" Background="#FFB443AF" FontFamily="Comic Sans MS" FontSize="48" Foreground="#FFD21691"/>
+        <Button x:Name="btn_plus" Content="+" Grid.Row="4" Grid.Column="3" Click="operation_Click" Background="#FFB443AF" FontFamily="Comic Sans MS" FontSize="48" Foreground="#FFD21691"/>
+        <Button x:Name="btn_equal" Content="=" Grid.Row="5" Grid.Column="3" Click="btn_equal_Click" Background="#FFB443AF" FontFamily="Comic Sans MS" FontSize="48" Foreground="#FFD21691"/>
+        <Button x:Name="btn_decimal" Content="." Grid.Row="5" Grid.Column="2" Click="btn_decimal_Click" Background="#FFCF92D6" FontFamily="Chiller" FontSize="72" Foreground="#FFFAA8D5"/>
 
         <!-- Result box-->
-        <TextBox x:Name="txt_display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="50" BorderThickness="0" Grid.Row="0" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="txt_display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="72" BorderThickness="0" Grid.Row="0" Grid.ColumnSpan="4" Background="#FFFAA8D5"  Foreground="#FFCF92D6" FontFamily="Algerian"/>
 
 
     </Grid>

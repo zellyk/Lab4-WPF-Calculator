@@ -23,7 +23,8 @@ namespace Lab4_Calculator
 
         double number1 = 0;
         double number2 = 0;
-        string operation = "";
+
+        string operation = " ";
 
 
         public MainWindow()
@@ -36,10 +37,16 @@ namespace Lab4_Calculator
 
             Button b = (Button)sender;
 
-           // int.TryParse(b.Content.ToString(), out int numPressed);
+            // int.TryParse(b.Content.ToString(), out int numPressed);
 
-            txt_display.Text += b.Content.ToString();
-
+            if (txt_display.Text.ToString().Equals("0"))
+            {
+                txt_display.Text = b.Content.ToString();
+            }
+            else 
+            {
+                txt_display.Text += b.Content.ToString();
+            }
         }
 
         private void operation_Click(object sender, RoutedEventArgs e)
@@ -49,7 +56,7 @@ namespace Lab4_Calculator
 
             // int.TryParse(b.Content.ToString(), out int numPressed);
 
-            number1 = int.Parse(txt_display.Text);
+            number1 = double.Parse(txt_display.Text);
 
             operation = b.Content.ToString();
             txt_display.Text = "0";
@@ -60,7 +67,7 @@ namespace Lab4_Calculator
         {
             Button b = (Button)sender;
 
-            number2 = int.Parse(txt_display.Text);
+            number2 = double.Parse(txt_display.Text);
 
             switch (operation)
             {
@@ -74,15 +81,17 @@ namespace Lab4_Calculator
                     txt_display.Text = (number1 * number2).ToString();
                     break;
                 case "/":
+                    if(number2 == 0)
+                    {
+                      break; 
+                    }
                     txt_display.Text = (number1 / number2).ToString();
                     break;
-                case "%":
-                    txt_display.Text = (number1 % number2).ToString();
-                    break;
 
+
+                string operation = "";
             }
-
-
+            
         }
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)
@@ -96,30 +105,52 @@ namespace Lab4_Calculator
 
         private void btn_positive_Click(object sender, RoutedEventArgs e)
         {
-            if (operation == "")
+
+            string input = txt_display.Text;
+            List<Char> textPosNeg = txt_display.Text.ToList();
+            string pat = @"-[0-9]+";
+            string pat2 = @"-[0-9]+\.[0-9]+";
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(input, pat) || System.Text.RegularExpressions.Regex.IsMatch(input, pat2))
             {
-               // number1 *= -1; check for current string status -/+
-                txt_display.Text = "-" + number1.ToString();
+                List<Char> positiveValue;
+                positiveValue = textPosNeg.Where(x => !x.Equals('-')).ToList();
+                string newValue = new string(positiveValue.ToArray());
+                txt_display.Text = newValue;
+                return;
             }
-            else
-            {
-                number2 *= -1;
-                txt_display.Text = number2.ToString();
-            }
-        } 
+
+            string negativeValue;
+            negativeValue = "-" + txt_display.Text;
+            txt_display.Text = negativeValue;
+        
+
+    } 
 
         private void btn_decimal_Click(object sender, RoutedEventArgs e)
         {
-            if (operation == "")
+            if (!txt_display.Text.ToString().Contains("."))
             {
-                number1 += .0;
-                txt_display.Text = number1.ToString();
+                txt_display.Text += ".";
+            }
+        }
+        private void btn_perc_Click(object sender, RoutedEventArgs e)
+        {
+            double percentValue;
+
+            if (number2 == 0)
+            {
+                percentValue = double.Parse(txt_display.Text) / 100;
+                txt_display.Text = percentValue.ToString();
+                return;
             }
             else
             {
-                number2 += .0;
-                txt_display.Text = number2.ToString();
+                percentValue = number2 * (double.Parse(txt_display.Text) / 100);
+                txt_display.Text = percentValue.ToString();
             }
+            
+
         }
     }
 }
